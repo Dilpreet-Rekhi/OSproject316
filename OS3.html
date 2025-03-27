@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Deadlock Detection Tool</title>
+    <link rel = "stylesheet" href = "os3.css">
+</head>
+<body>
+    <header>
+        <h1>AI-Based Deadlock Detection Tool</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <h2>System Configuration</h2>
+            <div class="form-group">
+                <label for="processes">Number of Processes:</label>
+                <input type="number" id="processes" min="1" max="10" value="3">
+            </div>
+            <div class="form-group">
+                <label for="resources">Number of Resources:</label>
+                <input type="number" id="resources" min="1" max="10" value="3">
+            </div>
+            <button id="generate-btn" onclick="generateTable()">Generate Matrices</button>
+        </section>
+
+        <section class="matrix-section" id="matrix-section" style="display: none;">
+            <h2>Resource Allocation</h2>
+            <p>Enter the allocation and request matrices below:</p>
+            <div id="tables-container"></div>
+            <button id="detect-btn" onclick="detectDeadlock()">Detect Deadlock</button>
+        </section>
+
+        <section class="output-section">
+            <h2>Detection Results</h2>
+            <div id="result" aria-live="polite">
+                Please generate matrices and click "Detect Deadlock" to see results.
+            </div>
+            <div id="explanation"></div>
+        </section>
+    </main>
+
+    <script src = "os3.js">
+    </script>
+</body>
+</html>
